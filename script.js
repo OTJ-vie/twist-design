@@ -72,3 +72,22 @@ function loadVideo() {
         </iframe>
     `;
 }
+
+document.querySelectorAll(".faq-question").forEach(question => {
+    question.addEventListener("click", () => {
+        const parent = question.parentElement;
+        const answer = parent.querySelector(".faq-answer");
+
+        // Close all other answers
+        document.querySelectorAll(".faq-item").forEach(item => {
+            if (item !== parent) {
+                item.classList.remove("active");
+                item.querySelector(".faq-answer").style.display = "none";
+            }
+        });
+
+        // Toggle current answer
+        parent.classList.toggle("active");
+        answer.style.display = parent.classList.contains("active") ? "block" : "none";
+    });
+});
