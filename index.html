@@ -110,52 +110,71 @@
         </div>
     </section>
 
-    <section class="service">
-        <div class="service-header">
+    <section class="service-component">
+        <div class="service-content">
             <h3>Services</h3>
             <h1>Apps, websites & branding</h1>
             <p>Get everything you need in one place</p>
         </div>
-
-        <div class="service-content">
-            <div class="services">
-                <div id="web-design" class="design-item active" data-image="/image/web-design.png">
-                    <img src="image/web-design.avif" alt="icon" class="icon">
-                    <div>
-                        <h1>Web Design</h1>
-                        <p>We craft visually stunning and user-friendly websites that captivate audiences and drive conversions.</p>
+        <div class="container">
+            <div class="grid">
+              <!-- Left Column - Service List -->
+              <div class="services">
+                <div class="service active" data-id="1">
+                  <div class="service-header">
+                    <div class="icon-container">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
                     </div>
+                    <h2>Web Design</h2>
+                  </div>
+                  <div class="service-subtitle">
+                    <p>We craft visually stunning and user-friendly websites that captivate audiences and drive conversions.</p>
+                  </div>
                 </div>
-
-                <div id="product-design" class="design-item" data-image="/image/product-design.jpg">
-                    <img src="image/web-design.avif" alt="icon" class="icon">
-                    <div>
-                        <h1>Product Design</h1>
-                        <p>Our team creates intuitive and innovative product designs that solve real-world problems and delight users.</p>
+      
+                <div class="service" data-id="2">
+                  <div class="service-header">
+                    <div class="icon-container">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>
                     </div>
+                    <h2>Product Design</h2>
+                  </div>
+                  <div class="service-subtitle">
+                    <p>Creating intuitive digital products that solve real problems and delight users.</p>
+                  </div>
                 </div>
-
-                <div id="brand-identity" class="design-item" data-image="/image/brand-identity.jpg">
-                    <img src="image/web-design.avif" alt="icon" class="icon">
-                    <div>
-                        <h1>Brand Identity</h1>
-                        <p>We develop cohesive and memorable brand identities that effectively communicate your company's values and resonate with your target audience.</p>
+      
+                <div class="service" data-id="3">
+                  <div class="service-header">
+                    <div class="icon-container">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
                     </div>
+                    <h2>Brand Identity</h2>
+                  </div>
+                  <div class="service-subtitle">
+                    <p>Developing memorable brand identities that resonate with your target audience.</p>
+                  </div>
                 </div>
-
-                <div id="framer-development" class="design-item" data-image="/image/framer-development.png">
-                    <img src="image/web-design.avif" alt="icon" class="icon">
-                    <div>
-                        <h1>Framer Development</h1>
-                        <p>We leverage the power of Framer to build interactive prototypes and seamless animations that bring your digital products to life.</p>
+      
+                <div class="service" data-id="4">
+                  <div class="service-header">
+                    <div class="icon-container">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"/><path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"/><path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"/><path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"/></svg>
                     </div>
+                    <h2>Framer Development</h2>
+                  </div>
+                  <div class="service-subtitle">
+                    <p>Building high-fidelity prototypes and animations that bring your designs to life.</p>
+                  </div>
                 </div>
-
+              </div>
+      
+              <!-- Right Column - Image Display -->
+              <div class="image-container">
+                <img src="image/web-design.png" alt="Web Design" class="service-image">
+              </div>
             </div>
-            <div class="service-image">
-                <img src="image/web-design.png" alt="image" id="service-image" />
-            </div>
-        </div>
+          </div>
     </section>
 
     <section class="benefit">
@@ -449,9 +468,9 @@
             <p>We're Richard and Jared, the co-founders of Twist, and we are thrilled to partner with you on your journey.</p>
         </div>
 
-        <div class="about-img">
-            <img src="image/author1.webp" alt="image" class="about-img1">
-            <img src="image/author2.webp" alt="image" class="about-img2">
+        <div class="founder-image">
+            <img src="image/author1.webp" alt="image" class="">
+            <img src="image/author2.webp" alt="image" class="">
         </div>
 
         <div class="about-content">

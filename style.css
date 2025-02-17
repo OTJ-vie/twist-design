@@ -237,64 +237,109 @@ img {
     color: #111;
 }
 
-.service {
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 30px;
+  }
+  
+  @media (min-width: 1024px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+
+  .service-component {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+  }
+  
+  .services {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .service {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .service.active {
+    transform: translateX(0.5rem);
+  }
+  
+  .service-header {
+    display: flex;
     align-items: center;
-    text-align: center;
-}
-
-.service-header {
-    max-width: 700px;
-    margin: 10px auto;
-    padding: 20px;
-}
-
-.service h3 {
-    max-width: 72rem;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1rem;
-    background-color: #111;
-    color: #fff;
-    border-radius: 50px;
-    font-weight: lighter;
-    padding: 10px 2px;
-    border-radius: 30px;
-    text-align: center;
-    border: none;
-    width: 20%;
-}
-
-.service h1 {
-    font-size: 32px;
-    font-weight: 600;
-    margin-top: 15px;
-    color: #000;
-}
-
-.service p {
-    font-size: 16px;
-    color: #333;
-    max-width: 600px;
-    margin:  auto;
-}
-
-.service-content {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    /* align-items: center; */
-    text-align: left;
-    gap: 20px;
-    padding: 10px;
-    border-radius: 20px;
-    max-width: 72rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem; 
-    padding-right: 1rem;
-}
+    gap: 1rem;
+  }
+  
+  .icon-container {
+    padding: 0.5rem;
+    background-color: rgb(243, 244, 246);
+    border-radius: 0.5rem;
+    color: rgb(75, 85, 99);
+    transition: all 0.3s ease;
+  }
+  
+  .service.active .icon-container {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+  }
+  
+  .service h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: rgb(75, 85, 99);
+    transition: color 0.3s ease;
+  }
+  
+  .service.active h2 {
+    color: rgb(0, 0, 0);
+  }
+  
+  .service-subtitle {
+    margin-top: 0.5rem;
+    margin-left: 3.5rem;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .service.active .service-subtitle {
+    max-height: 6rem;
+    opacity: 1;
+  }
+  
+  .service-subtitle p {
+    color: rgb(75, 85, 99);
+    line-height: 1.5;
+  }
+  
+  .image-container {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: rgb(243, 244, 246);
+    aspect-ratio: 16 / 12;
+  }
+  
+  .service-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+  }
 
 .design-item {
     display: flex;
@@ -323,10 +368,6 @@ img {
     margin: 5px 0 0 0;
     padding-left: 5px;
   }
-
-  .design-item h1 {
-    /* background-color: #fff; */
-  }
   
   .design-item.active p {
     max-height: 100px;
@@ -341,14 +382,14 @@ img {
     text-align: center;
 }
 
-.benefit-header, .work-header, .pricing-header, .testimonials-header, .tutorials-header,  .offer-header, .about-header, .faq-header {
+.benefit-header, .work-header, .pricing-header, .testimonials-header, .tutorials-header,  .offer-header, .about-header, .faq-header, .service-content {
     max-width: 700px;
     margin: 10px auto;
     padding: 20px;
     text-align: center;
 }
 
-.benefit h3, .work h3, .pricing h3, .testimonials h3, .offer h3, .tutorials h3, .about h3, .faq h3 {
+.benefit h3, .work h3, .pricing h3, .testimonials h3, .offer h3, .tutorials h3, .about h3, .faq h3, .service h3, .service-content h3 {
     max-width: 72rem;
     margin-left: auto;
     margin-right: auto;
@@ -364,14 +405,14 @@ img {
     width: 20%;
 }
 
-.benefit h1, .work h1, .testimonials h1, .offer h1, .about h1, .tutorials h1, .faq h1 {
+.benefit h1, .work h1, .testimonials h1, .offer h1, .about h1, .tutorials h1, .faq h1, .service-content h1 {
     font-size: 32px;
     font-weight: 600;
     margin-top: 15px;
     color: #000;
 }
 
-.benefit p, .work p, .offer p, .about p, .tutorials p, .faq p {
+.benefit p, .work p, .offer p, .about p, .tutorials p, .faq p, .service-content p {
     font-size: 16px;
     color: #333;
     max-width: 600px;
@@ -412,18 +453,6 @@ img {
     background-color: #ff5500;
     padding: 20px;
 }
-/* .benefit .icon {
-    background-color: #6200ea;
-    color: #ffffff;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    font-size: 24px;
-} */
 
 h2 {
     font-size: 20px;
@@ -758,17 +787,26 @@ button:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.about-img {
-    max-width: 56rem;
-    margin-left: auto;
-    margin-right: auto;
+.founder-image {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
-    /* width: 50%; */
-}
+    margin-bottom: 20px;
+  }
+  
+  .founder-image img {
+    width: 150px;
+    height: 200px;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  
+  .founder-image img:hover {
+    transform: scale(1.05);
+  }
 
 .about-content p {
     font-size: 1.2rem;
@@ -776,18 +814,6 @@ button:hover {
     max-width: 600px;
     margin:  auto;
     padding-top: 20px;
-}
-
-.about-img1 {
-    width: 20%;
-    /* position: absolute; */
-    right: 2px;
-}
-
-.about-img2 {
-    width: 20%;
-    position: relative;
-    top: 5;
 }
 
 .about button, .tutorials button {
@@ -936,6 +962,176 @@ footer h4 {
     font-size: .8rem;
     text-decoration: none;
 }
+
+@media (max-width: 768px) {
+    .tutorial-header h1 {
+      font-size: 24px;
+    }
+
+    .tutorial-header p {
+      font-size: 14px;
+    }
+  }
+
+    /* Tablet Responsiveness */
+    @media (max-width: 1024px) {
+        .about-header h1 {
+          font-size: 2rem;
+        }
+      
+        .about-content p {
+          font-size: 1rem;
+        }
+      }
+      
+      /* Desktop View */
+      @media (min-width: 1200px) {
+        .about-header h1 {
+          font-size: 3rem;
+        }
+      
+        .about-content p {
+          font-size: 1.2rem;
+        }
+      
+        .call-button button {
+          font-size: 1.1rem;
+          padding: 14px 28px;
+        }
+      }
+
+        /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .about-header h1 {
+      font-size: 1.8rem;
+    }
+  
+    .about-header p.intro, .about-content p {
+      font-size: 0.9rem;
+    }
+  
+    .founder-image img {
+      width: 100px;
+      height: 140px;
+    }
+  
+    .call-button button {
+      font-size: 0.9rem;
+      padding: 10px 16px;
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .process-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .process h1 {
+        font-size: 24px;
+    }
+    .process-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 520px) {
+    .process-content {
+        grid-template-columns: 1fr;
+    }
+    .process h1 {
+        font-size: 20px;
+    }
+    .process h3 {
+        font-size: 0.9rem;
+        width: 120px;
+    }
+    .process-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .benefit-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .benefit-content {
+        grid-template-columns: 1fr;
+    }
+    .benefit h1 {
+        font-size: 24px;
+    }
+    .benefit p {
+        font-size: 14px;
+    }
+    .benefit-card img {
+        width: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefit-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .work-content {
+        gap: 30px;
+    }
+    .work-card-text {
+        font-size: 1rem;
+    }
+    .work .cta-btn {
+        padding: 0.6rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .work-content {
+        grid-template-columns: 1fr;
+    }
+    .work-card-text {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing {
+        padding: 20px;
+    }
+    .pricing-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-header h1 {
+      font-size: 1.8rem;
+    }
+  
+    .about-header p.intro, .about-content p {
+      font-size: 0.9rem;
+    }
+  
+    .founder-image img {
+      width: 100px;
+      height: 140px;
+    }
+  
+    .call-button button {
+      font-size: 0.9rem;
+      padding: 10px 16px;
+      width: 90%;
+    }
+  }
 /* #web-design.active {
     background-color: #f8f8f8;
     display: flex;

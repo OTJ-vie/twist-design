@@ -7,22 +7,20 @@ window.onload = function() {
     }, 1000); // Delay of 500ms
 };
 
-const designItems = document.querySelectorAll(".design-item");
-const image = document.getElementById("service-image");
+// const designItems = document.querySelectorAll(".design-item");
+// const image = document.getElementById("service-image");
 
-designItems.forEach(designItem => {
-    designItem.addEventListener("click", () => {
-        designItems.forEach((i) => {
-            if (i !== designItem) {
-              i.classList.remove("active");
-            }
-          });
-        designItem.classList.toggle("active");
-        image.src = designItem.getAttribute("data-image");
-        // document.body.appendChild(image);
-    });
-}); 
-
+// designItems.forEach(designItem => {
+//     designItem.addEventListener("click", () => {
+//         designItems.forEach((i) => {
+//             if (i !== designItem) {
+//               i.classList.remove("active");
+//             }
+//           });
+//         designItem.classList.toggle("active");
+//         image.src = designItem.getAttribute("data-image");
+//     });
+// }); 
 const testimonials = [
     {
         text: "Twist make things very pretty, like the new Pied Piper, but better! They took the chaos and made it sing – it's like they grabbed a tech-savvy paintbrush and created a masterpiece. Thanks to Twist, we're the talk of the town, just like me, Jian-Yang, CEO extraordinaire!",
@@ -91,3 +89,49 @@ document.querySelectorAll(".faq-question").forEach(question => {
         answer.style.display = parent.classList.contains("active") ? "block" : "none";
     });
 });
+
+const services = [
+    {
+      id: 1,
+      image: "image/web-design.png"
+    },
+    {
+      id: 2,
+      image: "image/product-design.jpg"
+    },
+    {
+      id: 3,
+      image: "/image/brand-identity.jpg"
+    },
+    {
+      id: 4,
+      image: "/image/framer-development.png"
+    }
+  ];
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const serviceElements = document.querySelectorAll('.service');
+    const serviceImage = document.querySelector('.service-image');
+  
+    serviceElements.forEach(service => {
+      service.addEventListener('click', () => {
+        // Remove active class from all services
+        serviceElements.forEach(s => s.classList.remove('active'));
+        
+        // Add active class to clicked service
+        service.classList.add('active');
+        
+        // Update image
+        const serviceId = parseInt(service.dataset.id);
+        const serviceData = services.find(s => s.id === serviceId);
+        
+        if (serviceData) {
+          serviceImage.style.opacity = '0';
+          setTimeout(() => {
+            serviceImage.src = serviceData.image;
+            serviceImage.style.opacity = '1';
+          }, 300);
+        }
+      });
+    });
+  });
