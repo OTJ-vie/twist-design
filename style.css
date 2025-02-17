@@ -52,14 +52,16 @@
     background-position: left;
 } */
 
-.image3, .image9 {
+.image3, .image9, .image6 {
     width: 100%;
-    height: 50vh; /* Half of the original height */
+    /* height: 50vh;  */
     object-fit: cover;
+
 }
 
 .image3 {
     object-position: top;
+    width: 100%;
 }
 
 .image9 {
@@ -70,17 +72,22 @@
     background-color: #f8f8f8;
     display: flex;
     position: relative;
-    width: 100%;
     margin: 20px;
     padding: 20px;
     border-radius: 20px;
+    overflow: hidden;
+    gap: 20px;
 }
 
 .hero-text {
     display: grid;
+    margin-left: auto;
+    margin-right: auto;
     justify-items: center;
     justify-content: center;
     align-items: center;
+    padding:0 100px;
+    text-align: center;
 }
 .hero-text h1 {
         font-size: 2.5rem;
@@ -89,8 +96,47 @@
 
 .hero-text p {
         font-size: 1.2rem;
-        color: #555;
+        color: #111;
+}
+
+.hero2 {
+    background-color: #333;
+    display: flex;
+    position: relative;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    gap: 20px;
+}
+
+.hero-text2 {
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    padding:0 100px;
+    text-align: center;
+}
+.hero-text2 h1 {
+        font-size: 2.5rem;
+        color: #ddd;
     }
+
+.hero-text2 p {
+        font-size: 1.2rem;
+        color: #ddd;
+}
+
+.hero-img, .hero-img5  {
+    margin-top: 100px;
+}
+
+.hero-img, .hero-img5 img {
+    width: 100%;
+}
 
 img {
     width: 50%;
@@ -99,9 +145,12 @@ img {
 .hero-image {
     display: flex;
 }
-.content {
-    padding: 20px;
+
+.hero-image img {
+    width: 100%;
+    margin-top: 20px;
 }
+
 
 .testimony {
     display: flex;

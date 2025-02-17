@@ -4,23 +4,11 @@ window.onload = function() {
         let spanText = document.getElementById("innertext");
         spanText.style.backgroundColor = "#ff5500";
         spanText.style.color = "white";
-    }, 1000); // Delay of 500ms
+    }, 1000); 
 };
 
-// const designItems = document.querySelectorAll(".design-item");
-// const image = document.getElementById("service-image");
 
-// designItems.forEach(designItem => {
-//     designItem.addEventListener("click", () => {
-//         designItems.forEach((i) => {
-//             if (i !== designItem) {
-//               i.classList.remove("active");
-//             }
-//           });
-//         designItem.classList.toggle("active");
-//         image.src = designItem.getAttribute("data-image");
-//     });
-// }); 
+
 const testimonials = [
     {
         text: "Twist make things very pretty, like the new Pied Piper, but better! They took the chaos and made it sing – it's like they grabbed a tech-savvy paintbrush and created a masterpiece. Thanks to Twist, we're the talk of the town, just like me, Jian-Yang, CEO extraordinaire!",
@@ -76,7 +64,6 @@ document.querySelectorAll(".faq-question").forEach(question => {
         const parent = question.parentElement;
         const answer = parent.querySelector(".faq-answer");
 
-        // Close all other answers
         document.querySelectorAll(".faq-item").forEach(item => {
             if (item !== parent) {
                 item.classList.remove("active");
@@ -84,7 +71,6 @@ document.querySelectorAll(".faq-question").forEach(question => {
             }
         });
 
-        // Toggle current answer
         parent.classList.toggle("active");
         answer.style.display = parent.classList.contains("active") ? "block" : "none";
     });
@@ -115,13 +101,9 @@ const services = [
   
     serviceElements.forEach(service => {
       service.addEventListener('click', () => {
-        // Remove active class from all services
         serviceElements.forEach(s => s.classList.remove('active'));
-        
-        // Add active class to clicked service
         service.classList.add('active');
         
-        // Update image
         const serviceId = parseInt(service.dataset.id);
         const serviceData = services.find(s => s.id === serviceId);
         
